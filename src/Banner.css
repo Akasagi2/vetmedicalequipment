@@ -1,0 +1,135 @@
+/* Banner Section */
+.banner-section {
+    display: flex;
+    justify-content: left;   /* Canh giữa theo chiều ngang */
+    align-items: top;       /* Canh giữa theo chiều dọc */
+    height: 42vh;             /* Chiều cao bằng chiều cao màn hình */
+
+    background-size: 100%;   /* Giảm ảnh phù hợp với không gian */
+       color: #0d5ad7;
+    flex-direction: column;    /* Hiển thị theo cột (dọc) mặc định */
+    padding: 40px 20px;        /* Khoảng cách xung quanh */
+    text-align: center;
+  }
+  .banner-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);  /* Màu đen mờ phủ trên ảnh nền */
+    z-index: -1;  /* Đảm bảo lớp phủ mờ không che khuất nội dung */
+  }
+  /* Logo */
+  .banner-logo {
+    width: 170px;              /* Kích thước logo */
+    margin-bottom: 0px;       /* Khoảng cách dưới logo */
+    margin-left: 20px;
+    margin-top: -20px;
+    height: auto;              /* Đảm bảo không bị méo */
+  }
+  
+  /* Tiêu đề Banner */
+  .banner-title {
+    font-size: 3rem;           /* Kích thước chữ lớn */
+    font-weight: 800;
+    margin-bottom: 10px;
+    line-height: 1.18;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15); /* Tạo hiệu ứng bóng */
+  }
+  
+  /* Phần mô tả */
+  .banner-sub {
+    font-size: 1.2rem;         /* Kích thước chữ vừa */
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.09);
+  }
+  
+  /* Nút xem sản phẩm */
+  .banner-btn {
+    background: #009ACD;      /* Màu đỏ của nút */
+    color: #fff;
+    border: none;
+    padding: 10px 38px;
+    border-radius: 7px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 22px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10); /* Hiệu ứng bóng đổ */
+    transition: background 0.18s;
+  }
+  
+  /* Hiệu ứng hover cho nút */
+  .banner-btn:hover {
+    background: #1847CD;
+  }
+  
+  /* Các thẻ thông tin nổi bật */
+  .banner-info-cards {
+    display: flex;
+    justify-content: center;
+    gap: 42px;
+    margin-top: 46px;
+    flex-wrap: wrap;
+  }
+  
+  /* Thẻ thông tin: Số liệu nổi bật */
+  .info-card {
+    background: #fff;
+    color: #00008B;
+    padding: 15px 32px;
+    border-radius: 20px;
+    min-width: 165px;
+    box-shadow: 0 2px 22px rgba(0, 0, 0, 0.07);
+    margin-bottom: 12px;
+  }
+  
+  .info-card-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #009ACD;
+  }
+  
+  .info-card-label {
+    color: #212121;
+    font-size: 1.13rem;
+    font-weight: 500;
+  }
+  
+  /* Media Query cho màn hình nhỏ hơn 768px (mobile, tablet) */
+  @media (max-width: 768px) {
+    .banner-section {
+      flex-direction: column;  /* Chuyển banner từ hàng sang cột */
+      padding: 20px;
+    }
+  
+    .banner-title {
+      font-size: 2rem;           /* Giảm kích thước chữ */
+    }
+  
+    .banner-sub {
+      font-size: 1rem;           /* Giảm kích thước chữ */
+    }
+  
+    .banner-logo {
+      width: 100px;              /* Logo nhỏ hơn trên điện thoại */
+    }
+  
+    .banner-btn {
+      padding: 10px 20px;        /* Giảm kích thước nút */
+      font-size: 18px;
+    }
+  
+    .banner-info-cards {
+      gap: 24px;                 /* Giảm khoảng cách giữa các card */
+    }
+  
+    .info-card {
+      min-width: 120px;           /* Giảm kích thước card thông tin */
+    }
+  }
+  

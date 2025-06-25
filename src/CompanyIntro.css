@@ -1,0 +1,66 @@
+.company-footer {
+  background: #f8f9fc;
+  padding: 60px 40px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  color: #222;
+}
+
+.footer-container {
+  max-width: 2400px;
+  margin-left: 0;   /* căn trái */
+  margin-right: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 250px;
+  row-gap: 10px;
+  
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+/* Logo */
+.footer-logo {
+  height: 60px;
+  margin-bottom: 12px;
+  object-fit: contain;
+}
+
+/* Giới thiệu */
+.footer-description {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #03116b;
+  font-weight: bold;
+  text-align: justify;
+  
+}
+
+/* Tiêu đề mỗi cột */
+.footer-title {
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 12px;
+  color: #03116b;
+}
+
+/* Dòng thông tin */
+.footer-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+  font-weight: bold;
+  text-align: justify;
+}
+
+/* Tuỳ chọn hover nếu bạn muốn sau này */
+.footer-text:hover {
+  color: #0066cc;
+  cursor: pointer;
+}
