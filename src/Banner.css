@@ -1,26 +1,27 @@
 /* Banner Section */
 .banner-section {
+    position: relative;         /* ✅ Thêm để dùng ::before đúng */
+    width: 100%;                /* ✅ Thêm để tránh tràn */
     display: flex;
-    justify-content: left;   /* Canh giữa theo chiều ngang */
-    align-items: top;       /* Canh giữa theo chiều dọc */
-    height: 42vh;             /* Chiều cao bằng chiều cao màn hình */
-
-    background-size: 100%;   /* Giảm ảnh phù hợp với không gian */
-       color: #0d5ad7;
-    flex-direction: column;    /* Hiển thị theo cột (dọc) mặc định */
-    padding: 40px 20px;        /* Khoảng cách xung quanh */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-  }
-  .banner-section::before {
+    height: auto;               /* ❗ Dùng auto, tránh cố định vh */
+    padding: 60px 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #0d5ad7;
+}
+
+.banner-section::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.2);  /* Màu đen mờ phủ trên ảnh nền */
-    z-index: -1;  /* Đảm bảo lớp phủ mờ không che khuất nội dung */
-  }
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
   /* Logo */
   .banner-logo {
     width: 170px;              /* Kích thước logo */
@@ -98,6 +99,13 @@
     color: #212121;
     font-size: 1.13rem;
     font-weight: 500;
+  }
+  .banner-content {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   }
   
   /* Media Query cho màn hình nhỏ hơn 768px (mobile, tablet) */
