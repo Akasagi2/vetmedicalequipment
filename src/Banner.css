@@ -1,6 +1,6 @@
 .banner-section {
   position: relative;
-  width: 100%;
+  width: 105%;
   height: 60vh;
   overflow: hidden;
 }
@@ -10,7 +10,7 @@
   top: 20px;
   left: 20px;
   height: 60px;
-  z-index: 1000;
+  z-index: 1000;  
 }
 
 .banner-content {
