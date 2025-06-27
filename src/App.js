@@ -5,10 +5,10 @@ import ProductList from "./ProductList";
 
 function App() {
   return (
-    <div style={{ background: "#fafbff" }}>
+    <>
       <Banner />
       <ProductList />
-    </div>
+    </>
   );
 }
 
