@@ -33,3 +33,8 @@ export default function Banner() {
           <div className="info-card-number">10+</div>
           <div className="info-card-label">Thương hiệu</div>
         </div>
+      </div>  {/* <-- đóng banner-info-cards */}
+
+    </div>  {/* <-- đóng banner-section */}
+  );
+}
