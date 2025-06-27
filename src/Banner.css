@@ -1,28 +1,34 @@
+/* Banner full screen */
 .banner-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* chiếm toàn bộ chiều cao màn hình */
   background-image: url('/images/banner_bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh; /* full screen */
-  position: relative;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  overflow: hidden;
 }
 
+/* Logo ở góc trái trên cùng */
 .banner-logo {
-  position: left;
+  position: absolute;
   top: 20px;
-  left: 30px;
+  left: 20px;
   height: 60px;
-  z-index: 2;
+  z-index: 10;
 }
 
+/* Nội dung giữa */
 .banner-content {
   text-align: center;
   color: white;
-  z-index: 1;
+  z-index: 5;
+  margin-top: 60px;
 }
 
 .banner-btn {
@@ -36,6 +42,7 @@
   margin-bottom: 2rem;
 }
 
+/* Thẻ thống kê */
 .banner-info-cards {
   display: flex;
   gap: 2rem;
@@ -50,6 +57,7 @@
   border-radius: 1rem;
   min-width: 160px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  text-align: center;
 }
 
 .info-card-number {
