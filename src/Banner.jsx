@@ -5,7 +5,7 @@ export default function Banner() {
   return (
     <div className="banner-section">
       <img
-        src="/images/logo.png"
+        src="./images/logo.png"
         alt="Logo"
         className="banner-logo"
       />
