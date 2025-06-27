@@ -1,14 +1,19 @@
-
-/* index.css */
-body {
-  font-family: Arial, sans-serif;
+/* ✅ Reset toàn cục */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fafbff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ✅ Cho phép root chiếm hết chiều cao nội dung chứ không cố định */
 #root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
 }
