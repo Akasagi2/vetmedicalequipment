@@ -3,7 +3,15 @@ import "./Banner.css";
 
 export default function Banner() {
   return (
-    <div className="banner-section">
+    <div
+      className="banner-section"
+      style={{
+        backgroundImage: "url('/images/banner_bg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}
+    >
       <img
         src="/images/logo.png"
         alt="Logo"
@@ -33,7 +41,7 @@ export default function Banner() {
           <div className="info-card-number">10+</div>
           <div className="info-card-label">Thương hiệu</div>
         </div>
-      </div> 
-    </div>  
+      </div>
+    </div>
   );
 }
