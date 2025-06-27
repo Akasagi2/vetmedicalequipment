@@ -6,7 +6,7 @@ function Banner() {
     <div
       className="banner-section"
       style={{
-        background: "url('/images/banner_bg.png') center/100% no-repeat"
+        backgroundImage: "url('/images/banner_bg.png')"
       }}
     >
       <img src="/images/logo.png" className="banner-logo" alt="logo" />
