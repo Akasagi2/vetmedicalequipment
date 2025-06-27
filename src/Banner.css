@@ -1,143 +1,104 @@
 /* Banner Section */
 .banner-section {
-    position: relative;         /* ✅ Thêm để dùng ::before đúng */
-    width: 100%;                /* ✅ Thêm để tránh tràn */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: auto;               /* ❗ Dùng auto, tránh cố định vh */
-    padding: 60px 20px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: #0d5ad7;
+  width: 100%;
+  height: auto;
+  padding: 40px 20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  position: relative;
 }
 
+/* Bỏ overlay đen mờ */
 .banner-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.2);
-    z-index: -1;
+  display: none;
 }
-  /* Logo */
+
+/* Logo */
+.banner-logo {
+  width: 160px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  height: auto;
+}
+
+/* Nút xem sản phẩm */
+.banner-btn {
+  background: #009acd;
+  color: #fff;
+  padding: 10px 38px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  align-self: center;
+  margin-top: -10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.banner-btn:hover {
+  background: #007bb5;
+}
+
+/* Các thẻ thông tin nổi bật */
+.banner-info-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* Thẻ thông tin */
+.info-card {
+  background: #fff;
+  color: #00008B;
+  padding: 15px 32px;
+  border-radius: 20px;
+  min-width: 165px;
+  box-shadow: 0 2px 22px rgba(0, 0, 0, 0.07);
+  margin-bottom: 12px;
+}
+
+.info-card-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #009ACD;
+}
+
+.info-card-label {
+  color: #212121;
+  font-size: 1.13rem;
+  font-weight: 500;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
   .banner-logo {
-    width: 170px;              /* Kích thước logo */
-    margin-bottom: 0px;       /* Khoảng cách dưới logo */
-    margin-left: 20px;
-    margin-top: -20px;
-    height: auto;              /* Đảm bảo không bị méo */
+    width: 100px;
+    margin: 0 auto 20px auto;
   }
-  
-  /* Tiêu đề Banner */
-  .banner-title {
-    font-size: 3rem;           /* Kích thước chữ lớn */
-    font-weight: 800;
-    margin-bottom: 10px;
-    line-height: 1.18;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15); /* Tạo hiệu ứng bóng */
-  }
-  
-  /* Phần mô tả */
-  .banner-sub {
-    font-size: 1.2rem;         /* Kích thước chữ vừa */
-    margin-bottom: 20px;
-    font-weight: 500;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.09);
-  }
-  
-  /* Nút xem sản phẩm */
+
   .banner-btn {
-    background: #009ACD;      /* Màu đỏ của nút */
-    color: #fff;
-    border: none;
-    padding: 10px 38px;
-    border-radius: 7px;
-    font-size: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 22px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10); /* Hiệu ứng bóng đổ */
-    transition: background 0.18s;
+    font-size: 18px;
+    padding: 10px 24px;
   }
-  
-  /* Hiệu ứng hover cho nút */
-  .banner-btn:hover {
-    background: #1847CD;
-  }
-  
-  /* Các thẻ thông tin nổi bật */
+
   .banner-info-cards {
-    display: flex;
-    justify-content: center;
-    gap: 42px;
-    margin-top: 46px;
-    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 30px;
   }
-  
-  /* Thẻ thông tin: Số liệu nổi bật */
+
   .info-card {
-    background: #fff;
-    color: #00008B;
-    padding: 15px 32px;
-    border-radius: 20px;
-    min-width: 165px;
-    box-shadow: 0 2px 22px rgba(0, 0, 0, 0.07);
-    margin-bottom: 12px;
+    min-width: 120px;
+    padding: 12px 20px;
   }
-  
-  .info-card-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 6px;
-    color: #009ACD;
-  }
-  
-  .info-card-label {
-    color: #212121;
-    font-size: 1.13rem;
-    font-weight: 500;
-  }
-  .banner-content {
-  z-index: 1;
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  }
-  
-  /* Media Query cho màn hình nhỏ hơn 768px (mobile, tablet) */
-  @media (max-width: 768px) {
-    .banner-section {
-      flex-direction: column;  /* Chuyển banner từ hàng sang cột */
-      padding: 20px;
-    }
-  
-    .banner-title {
-      font-size: 2rem;           /* Giảm kích thước chữ */
-    }
-  
-    .banner-sub {
-      font-size: 1rem;           /* Giảm kích thước chữ */
-    }
-  
-    .banner-logo {
-      width: 100px;              /* Logo nhỏ hơn trên điện thoại */
-    }
-  
-    .banner-btn {
-      padding: 10px 20px;        /* Giảm kích thước nút */
-      font-size: 18px;
-    }
-  
-    .banner-info-cards {
-      gap: 24px;                 /* Giảm khoảng cách giữa các card */
-    }
-  
-    .info-card {
-      min-width: 120px;           /* Giảm kích thước card thông tin */
-    }
-  }
-  
+}
