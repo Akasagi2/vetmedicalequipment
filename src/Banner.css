@@ -1,34 +1,30 @@
-/* Banner full screen */
 .banner-section {
   position: relative;
   width: 100%;
-  min-height: 100vh; /* chiếm toàn bộ chiều cao màn hình */
-  background-image: url('/images/banner_bg.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 80px 20px 40px; /* tránh bị đè logo và nút */
+  height: 100vh;
+  background: url('/images/banner_bg.png') center/cover no-repeat;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
-/* Logo ở góc trái trên cùng */
+/* Logo cố định góc trái trên cùng */
 .banner-logo {
-  position: absolute;
+  position: fixed;     /* dùng fixed, không phải absolute */
   top: 20px;
   left: 20px;
   height: 60px;
-  z-index: 10;
+  z-index: 1000;       /* đảm bảo đè lên mọi thứ */
 }
 
-/* Nội dung giữa */
+/* nội dung ở giữa */
 .banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* chính giữa màn hình */
   text-align: center;
   color: white;
   z-index: 5;
-  margin-bottom: 40px;
   max-width: 90%;
 }
 
@@ -41,7 +37,7 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
   transition: background-color 0.3s ease;
 }
 
@@ -49,18 +45,23 @@
   background-color: #1976d2;
 }
 
-/* Thẻ thống kê */
+/* thẻ info card bên dưới */
 .banner-info-cards {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 1.5rem;
+  justify-content: center;
+  z-index: 5;
 }
 
 .info-card {
-  background: white;
+  background: rgba(255,255,255,0.9);
   color: #1a1a1a;
-  padding: 1.2rem 1.8rem;
+  padding: 1rem 1.5rem;
   border-radius: 1rem;
   min-width: 140px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -73,7 +74,7 @@
 }
 
 .info-card-number {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: #2196f3;
 }
@@ -83,37 +84,22 @@
   margin-top: 0.4rem;
   color: #333;
 }
+
+/* responsive */
 @media (max-width: 768px) {
-  .banner-section {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-  }
-
   .banner-logo {
-    width: 80px;
+    height: 40px;
+    top: 10px;
+    left: 10px;
   }
-
-  .banner-content {
-    align-items: center;
-    text-align: center;
-  }
-
   .banner-content h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
-
-  .banner-content p {
-    font-size: 1rem;
-  }
-
   .banner-btn {
     font-size: 1rem;
     padding: 10px 20px;
   }
-
-  .banner-info-cards {
-    justify-content: center;
+  .info-card {
+    min-width: 120px;
   }
 }
