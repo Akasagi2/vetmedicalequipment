@@ -19,8 +19,8 @@ export default function Banner() {
       />
 
       <div className="banner-content">
-        <h1>Thiết bị y tế thú y - IPP</h1>
-        <p>Chất lượng cao - Hỗ trợ tận tâm</p>
+        <h1></h1>
+        <p></p>
         <button className="banner-btn">Xem tất cả sản phẩm</button>
       </div>
 
