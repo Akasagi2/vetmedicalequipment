@@ -2,8 +2,15 @@ import React from "react";
 import "./Banner.css";
 
 export default function Banner() {
+  const handleViewAllClick = () => {
+    const section = document.getElementById("san-pham");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
-    <div
+    <section
       className="banner-section"
       style={{
         backgroundImage: "url('/images/banner_bg.png')",
@@ -12,16 +19,21 @@ export default function Banner() {
         backgroundRepeat: "no-repeat"
       }}
     >
-      <img
-        src="/images/logo.png"
-        alt="Logo"
-        className="banner-logo"
-      />
+      <img src="/images/logo.png" alt="IPP Vet" className="banner-logo" />
 
       <div className="banner-content">
-        <h1></h1>
-        <p></p>
-        <button className="banner-btn">Xem tất cả sản phẩm</button>
+        <h1>Thiết bị chẩn đoán thú y chuyên nghiệp</h1>
+        <p>
+          Giải pháp X-quang, CT, máy xét nghiệm và thiết bị phòng khám thú y –
+          tư vấn, lắp đặt và bảo hành trọn gói.
+        </p>
+        <button
+          className="banner-btn"
+          type="button"
+          onClick={handleViewAllClick}
+        >
+          Xem tất cả sản phẩm
+        </button>
       </div>
 
       <div className="banner-info-cards">
@@ -42,6 +54,7 @@ export default function Banner() {
           <div className="info-card-label">Thương hiệu</div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
+

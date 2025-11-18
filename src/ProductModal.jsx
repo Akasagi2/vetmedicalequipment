@@ -1,17 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ProductModal.css";
 
 export default function ProductModal({ product, onClose }) {
+  useEffect(() => {
+    if (!product) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [product, onClose]);
+
   if (!product) return null;
 
   const lines = product.description?.split("\n") || [];
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="close-btn" onClick={onClose}>×</button>
+      <div
+        className="modal-content"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <button className="close-btn" type="button" onClick={onClose}>
+          ×
+        </button>
 
-        {/* Ảnh chính có class modal-image để kiểm soát kích thước */}
         <img
           className="modal-image"
           src={product.images?.[0]}
@@ -22,16 +41,37 @@ export default function ProductModal({ product, onClose }) {
           <h2 className="product-title">{product.name}</h2>
 
           <div className="product-price">
-            <b>Giá:</b> {product.price || "Liên hệ"}
+            {product.price || "Liên hệ để được tư vấn giá"}
           </div>
 
           <div className="product-full-desc">
             {lines.map((line, index) => (
-              <p key={index}>✅ {line}</p>
+              <div key={index} className="product-line">
+                {line}
+              </div>
             ))}
+          </div>
+
+          <div className="product-action">
+            <button
+              type="button"
+              onClick={() => {
+                const contactSection = document.getElementById("lien-he");
+                if (contactSection) {
+                  contactSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                  });
+                }
+                onClose();
+              }}
+            >
+              Liên hệ tư vấn thiết bị
+            </button>
           </div>
         </div>
       </div>
     </div>
   );
 }
+

@@ -3,12 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #fafbff;
   line-height: 1.6;
   overflow-x: hidden;
 }
+
 #root {
   width: 100%;
   min-height: 100vh;

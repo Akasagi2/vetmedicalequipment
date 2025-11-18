@@ -4,11 +4,11 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* nền mờ */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* đảm bảo nằm trên tất cả */
+  z-index: 9999;
 }
 
 .modal-content {
@@ -27,32 +27,6 @@
   align-items: center;
 }
 
-
-.close-btn {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.modal-image {
-  width: 600px;         /* Cố định chiều rộng */
-  height: 400px;        /* Cố định chiều cao theo tỷ lệ 4:3 */
-  object-fit: cover;  /* Giữ nguyên tỷ lệ ảnh, không bị méo */
-  background-color: #f5f5f5; /* Thêm nền nếu ảnh nhỏ hơn khung */
-  display: block;
-  margin: 0 auto;
-  border-radius: 8px;
-}
-.modal-details {
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 .close-btn {
   position: absolute;
   top: 18px;
@@ -64,22 +38,42 @@
   cursor: pointer;
   z-index: 1;
 }
+
+.modal-image {
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  background-color: #f5f5f5;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.modal-details {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 18px;
+}
+
 .product-title {
   font-size: 1.4rem;
   font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  margin-top: 4px;
   margin-bottom: 12px;
-}
-.product-label {
   font-weight: 600;
-  color: #5e5e5e;
+  color: #b91c1c;
 }
-.product-value {
-  font-weight: 400;
-  color: #0a0a0a;
-}
+
 .product-action {
   margin-top: 22px;
 }
+
 .product-action button {
   background: #2563eb;
   color: #fff;
@@ -90,12 +84,14 @@
   cursor: pointer;
   transition: background 0.2s;
 }
+
 .product-action button:hover {
   background: #1e40af;
 }
+
 .product-full-desc {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* dùng 3 nếu muốn 3 cột */
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px 20px;
   white-space: pre-line;
   margin-top: 12px;
@@ -109,7 +105,23 @@
 }
 
 .product-line::before {
-  content: "✅";
+  content: "•";
   margin-right: 8px;
   flex-shrink: 0;
 }
+
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-full-desc {
+    grid-template-columns: 1fr;
+  }
+}
+
