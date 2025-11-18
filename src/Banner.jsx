@@ -1,12 +1,16 @@
 import React from "react";
 import "./Banner.css";
 
+function scrollToSection(id) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
 export default function Banner() {
   const handleViewAllClick = () => {
-    const section = document.getElementById("san-pham");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    scrollToSection("san-pham");
   };
 
   return (
@@ -19,7 +23,49 @@ export default function Banner() {
         backgroundRepeat: "no-repeat"
       }}
     >
-      <img src="/images/logo.png" alt="IPP Vet" className="banner-logo" />
+      <div className="banner-top">
+        <button
+          type="button"
+          className="banner-brand"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <img
+            src="/images/logo.png"
+            alt="IPP Vet"
+            className="banner-brand-logo"
+          />
+          <div className="banner-brand-text">
+            <span className="banner-brand-name">IPP Vet</span>
+            <span className="banner-brand-tagline">
+              Thiết bị chẩn đoán thú y
+            </span>
+          </div>
+        </button>
+
+        <nav className="banner-nav">
+          <button
+            type="button"
+            className="banner-nav-link"
+            onClick={() => scrollToSection("san-pham")}
+          >
+            Sản phẩm
+          </button>
+          <button
+            type="button"
+            className="banner-nav-link"
+            onClick={() => scrollToSection("ve-chung-toi")}
+          >
+            Về chúng tôi
+          </button>
+          <button
+            type="button"
+            className="banner-nav-link banner-nav-link-cta"
+            onClick={() => scrollToSection("lien-he")}
+          >
+            Liên hệ
+          </button>
+        </nav>
+      </div>
 
       <div className="banner-content">
         <h1>Thiết bị chẩn đoán thú y chuyên nghiệp</h1>
