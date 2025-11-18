@@ -16,9 +16,9 @@ function CompanyIntro() {
         {/* Liên hệ */}
         <div className="footer-section">
           <h4 className="footer-title">Liên hệ</h4>
-          <p className="footer-text">📞 0901 234 567</p>
-          <p className="footer-text">📧 vet@company.vn</p>
-          <p className="footer-text">📍 123 Đường ABC, TP.HCM</p>
+          <p className="footer-text">📞 0768 902 066</p>
+          <p className="footer-text">📧 viet.luong@ippcro.com</p>
+          <p className="footer-text">📍 27 Hàng Bài, Hoàn Kiếm, Hà Nội</p>
         </div>
 
         {/* Sản phẩm */}
