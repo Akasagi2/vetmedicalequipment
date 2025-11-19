@@ -96,6 +96,12 @@
   margin-top: 4px;
 }
 
+.product-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .product-price {
   color: rgb(171, 6, 6);
   font-weight: bold;
@@ -126,6 +132,108 @@
   font-style: italic;
 }
 
+.admin-area {
+  margin-top: 16px;
+  width: 100%;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 16px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-form-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.admin-input,
+.admin-textarea {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 13px;
+}
+
+.admin-textarea {
+  resize: vertical;
+}
+
+.admin-form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.admin-primary-button,
+.admin-secondary-button {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.admin-primary-button {
+  background-color: #1d4ed8;
+  color: #ffffff;
+}
+
+.admin-secondary-button {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.admin-login-inline {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.admin-error-text {
+  font-size: 12px;
+  color: #b91c1c;
+}
+
+.product-admin-btn {
+  background-color: #e5e7eb;
+  color: #111827;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.product-admin-btn-danger {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
 @media (max-width: 1024px) {
   .product-card {
     width: calc(33.333% - 20px);
@@ -146,4 +254,3 @@
     max-width: 360px;
   }
 }
-

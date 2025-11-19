@@ -1,4 +1,4 @@
-function ProductCard({ product, onDetail }) {
+function ProductCard({ product, onDetail, isAdmin, onEdit, onDelete }) {
   const descriptionLines = (product.description || "")
     .split("\n")
     .map((line) => line.trim())
@@ -24,9 +24,29 @@ function ProductCard({ product, onDetail }) {
         </div>
         <div className="product-bottom">
           <span className="product-price">{product.price}</span>
-          <button className="product-btn" type="button" onClick={onDetail}>
-            Xem chi tiết
-          </button>
+          <div className="product-actions">
+            <button className="product-btn" type="button" onClick={onDetail}>
+              Xem chi tiết
+            </button>
+            {isAdmin && (
+              <>
+                <button
+                  type="button"
+                  className="product-admin-btn"
+                  onClick={onEdit}
+                >
+                  Sửa
+                </button>
+                <button
+                  type="button"
+                  className="product-admin-btn product-admin-btn-danger"
+                  onClick={onDelete}
+                >
+                  Xóa
+                </button>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>
